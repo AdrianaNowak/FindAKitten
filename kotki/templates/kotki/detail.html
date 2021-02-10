@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person: {{person.name}}</title>
+    <link rel="stylesheet" href="{% static 'kotki/style.css' %}" >
+</head>
+<body>
+<h1>{{person.name}}</h1>
+<p>
+    This person has {{person.age}} years and a cat: <strong>{{person.cat}}</strong>
+</p>
+
+<a href="{% url 'welcome' %}">Home</a>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats List</title>
+    <link rel="stylesheet" href="{% static 'kotki/style.css' %}" >
+</head>
+<body>
+<h2>Cats List</h2>
+<ul>
+    {% for cat in cats %}
+    <li>
+        {{cat}}
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'welcome' %}">Home</a>
+
+</body>
+</html>

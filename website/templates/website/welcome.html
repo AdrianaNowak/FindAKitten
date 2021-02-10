@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IsItCat?</title>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}" >
+</head>
+<body>
+<h1>Witaj w aplikacji do kotków</h1>
+<p>
+    aplikacja służy do sprawdzenia czy na zdjęciu które prześlesz znajduje się kotek.
+    <em>aplikacja jest super</em>
+</p>
+
+<h2>People</h2>
+<ul>
+    {% for person in people %}
+        <li>
+            <a href="{% url 'detail' person.id %}">
+                {{person.name}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<p>
+<a href="{% url 'cats' %}">Cats List</a>
+</p>
+<p>
+<a href="/person/new_person">Add new person</a>
+</p>
+
+<p>
+<a href="/person/new_cat">Add new cat</a>
+</p>
+
+<img src="{% static 'website/cat.png' %}" width="550px">
+</body>
+</html>

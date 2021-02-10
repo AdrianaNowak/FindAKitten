@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Cat</title>
+    <link rel="stylesheet" href="{% static 'kotki/style.css' %}" >
+</head>
+<body>
+<h1>Add a new Cat</h1>
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
