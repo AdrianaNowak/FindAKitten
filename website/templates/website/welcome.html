@@ -5,35 +5,37 @@
     <meta charset="UTF-8">
     <title>IsItCat?</title>
     <link rel="stylesheet" href="{% static 'website/style.css' %}" >
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Witaj w aplikacji do kotków</h1>
+<h1>Witaj w aplikacji - Znajdź kotka</h1>
 <p>
-    aplikacja służy do sprawdzenia czy na zdjęciu które prześlesz znajduje się kotek.
-    <em>aplikacja jest super</em>
+    Aplikacja służy do sprawdzenia czy na zdjęciu, które prześlesz znajduje się kotek.
+
 </p>
 
-<h2>People</h2>
-<ul>
+<h2>Społeczność</h2>
+<ul >
     {% for person in people %}
-        <li>
-            <a href="{% url 'detail' person.id %}">
+        <li >
+            <a  href="{% url 'detail' person.id %}">
                 {{person.name}}
             </a>
         </li>
     {% endfor %}
 </ul>
-<p>
-<a href="{% url 'cats' %}">Cats List</a>
-</p>
-<p>
-<a href="/person/new_person">Add new person</a>
-</p>
 
 <p>
-<a href="/person/new_cat">Add new cat</a>
+<a  style=" margin-right: 150px; margin-left: 180px; " href="{% url 'cats' %}">Lista kotów</a>
+
+<a  style=" margin-right: 150px;" href="/person/new_person">Dodaj osobę</a>
+
+<a style=" margin-right: 150px;" href="/person/new_cat">Dodaj kota</a>
+
+<a style=" margin-right: 150px;" href="/image_upload">Sprawdź zdjęcie</a>
 </p>
 
-<img src="{% static 'website/cat.png' %}" width="550px">
+<img src="{% static 'website/cat.png' %}" width="540px">
+
 </body>
 </html>

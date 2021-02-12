@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from website.views import welcome, date, jakistrzeciprzyklad
-from kotki.views import detail, cats_list, new_person, new_cat
+from kotki.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +29,10 @@ urlpatterns = [
     path('person/<int:id>', detail, name="detail"),
     path('cats', cats_list, name="cats"),
     path('person/new_person', new_person, name="new_person"),
-    path('person/new_cat', new_cat, name="new_cat")
-
+    path('person/new_cat', new_cat, name="new_cat"),
+    path('image_upload', new_image_view, name='image_upload'),
+    path('success', success, name='success'),
 ]
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

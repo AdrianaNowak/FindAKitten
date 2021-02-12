@@ -17,3 +17,8 @@ class Person(models.Model):
 
     def __str__(self):
         return f"{self.name} with age: {self.age}"
+
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=50)
+    hotel_Main_Img = models.ImageField(upload_to='images/')

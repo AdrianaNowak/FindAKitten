@@ -9,7 +9,7 @@ def welcome(request):
 
 
 def date(request):
-    return HttpResponse("Tu Mosz date grzybie jakbyś potrzebował: " + str(datetime.now()))
+    return HttpResponse("wynik datetime now : " + str(datetime.now()))
 
 
 def jakistrzeciprzyklad(request):

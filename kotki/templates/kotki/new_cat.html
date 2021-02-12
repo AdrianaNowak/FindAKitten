@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Add new Cat</title>
     <link rel="stylesheet" href="{% static 'kotki/style.css' %}" >
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
 <h1>Add a new Cat</h1>
@@ -13,7 +14,20 @@
         {{ form }}
     </table>
     {% csrf_token %}
-    <button type="submit">Create</button>
+    <button  style="box-shadow: 0 10 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Montserrat';
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0 1px 0 #3d768a;"
+    type="submit">Create</button>
 </form>
 </body>
 </html>

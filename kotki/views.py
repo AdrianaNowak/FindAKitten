@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.forms import modelform_factory
+from django.http import HttpResponse
+from .forms import *
 
 from .models import Person, Cat
 
@@ -37,3 +39,19 @@ def new_cat(request):
     else:
         form = CatForm()
     return render(request, "kotki/new_cat.html", {"form": form})
+
+
+def new_image_view(request):
+    if request.method == 'POST':
+        form = HotelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = HotelForm()
+    return render(request, 'kotki/images.html', {'form': form})
+
+def success(request):
+    return HttpResponse('successfully uploaded')
+
