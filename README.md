@@ -1,5 +1,6 @@
 # FindAKitten
 
+# How to operate  
 (ogarnę to do końca jutro rano - ściągnę to sobie na 2 komputer i zobaczę co dokładnie potrzebuje zrobić zaczynając ze stanu "nie wiem co to python")  
 This project is based on  Django v. 3.1.6. & Python v. 3.8.6  
 to start you need those and Pycharm installed,   
@@ -21,3 +22,8 @@ password: admin
 but if there is not -> please stop the server, and run a following command in the terminal:  
 python manage.py createsuperuser   (and follow creator steps). Then runserver again and login on newly created user.  
 After authorization you can do the admin stuff (create another users, CRUD operations on entities)  
+
+# Możliwe że przydatna informacja dotycząca uploadu zdjęć  
+pod adresem:  
+FindAKitten/kotki/views.py   
+znajduje się metoda new_imgae_view której argument request zawiera
