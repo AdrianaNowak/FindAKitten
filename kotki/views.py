@@ -43,13 +43,13 @@ def new_cat(request):
 
 def new_image_view(request):
     if request.method == 'POST':
-        form = HotelForm(request.POST, request.FILES)
+        form = ImageForm(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()
             return redirect('success')
     else:
-        form = HotelForm()
+        form = ImageForm()
     return render(request, 'kotki/images.html', {'form': form})
 
 def success(request):
