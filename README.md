@@ -26,4 +26,4 @@ After authorization you can do the admin stuff (create another users, CRUD opera
 # Możliwe że przydatna informacja dotycząca uploadu zdjęć  
 pod adresem:  
 FindAKitten/kotki/views.py   
-znajduje się metoda new_imgae_view której argument request zawiera przesłane z formularza zdjęcie
+znajduje się metoda new_image_view której argument request zawiera przesłane z formularza zdjęcie
