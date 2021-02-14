@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Cat, Person
+from .models import Animal, Person
 
-admin.site.register(Cat)
+admin.site.register(Animal)
 admin.site.register(Person)

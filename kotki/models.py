@@ -1,19 +1,20 @@
 from django.db import models
 
 
-class Cat(models.Model):
+class Animal(models.Model):
+    type = models.CharField(max_length=25)
     name = models.CharField(max_length=50)
     color = models.CharField(max_length=50)
     date_of_birth = models.DateField()
 
     def __str__(self):
-        return f"{self.name}, kolor sierści: {self.color}, urodzony:{self.date_of_birth}"
+        return f"{self.type} o imieniu {self.name}"
 
 
 class Person(models.Model):
     name = models.CharField(max_length=50)
     age = models.IntegerField()
-    cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
+    animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name} with age: {self.age}"

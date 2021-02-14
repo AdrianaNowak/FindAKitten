@@ -27,9 +27,9 @@ urlpatterns = [
     path('date', date),
     path('temp', jakistrzeciprzyklad),
     path('person/<int:id>', detail, name="detail"),
-    path('cats', cats_list, name="cats"),
+    path('animals', animals_list, name="animals"),
     path('person/new_person', new_person, name="new_person"),
-    path('person/new_cat', new_cat, name="new_cat"),
+    path('person/new_animal', new_animal, name="new_animal"),
     path('image_upload', new_image_view, name='image_upload'),
     path('success', success, name='success'),
 ]

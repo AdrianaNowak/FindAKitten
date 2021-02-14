@@ -3,7 +3,7 @@ from django.forms import modelform_factory
 from django.http import HttpResponse
 from .forms import *
 
-from .models import Person, Cat
+from .models import Person, Animal
 
 
 def detail(request, id):
@@ -11,12 +11,12 @@ def detail(request, id):
     return render(request, "kotki/detail.html", {"person": person})
 
 
-def cats_list(request):
-    return render(request, "kotki/cats_list.html", {"cats": Cat.objects.all()})
+def animals_list(request):
+    return render(request, "kotki/animals_list.html", {"cats": Animal.objects.all()})
 
 
 PersonForm = modelform_factory(Person, exclude=[])
-CatForm = modelform_factory(Cat, exclude=[])
+AnimalForm = modelform_factory(Animal, exclude=[])
 
 
 def new_person(request):
@@ -30,15 +30,15 @@ def new_person(request):
     return render(request, "kotki/new_person.html", {"form": form})
 
 
-def new_cat(request):
+def new_animal(request):
     if request.method == "POST":
-        form = CatForm(request.POST)
+        form = AnimalForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("welcome")
     else:
-        form = CatForm()
-    return render(request, "kotki/new_cat.html", {"form": form})
+        form = AnimalForm()
+    return render(request, "kotki/new_animal.html", {"form": form})
 
 
 def new_image_view(request):

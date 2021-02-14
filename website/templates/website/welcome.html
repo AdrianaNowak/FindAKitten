@@ -66,7 +66,7 @@
       <div class="row">
         <div class="features-box col-lg-2 ">
           <i class="icon fas fa-list fa-3x"></i>
-          <a href="{% url 'cats' %}">Lista Zwierzaków</a>
+          <a href="{% url 'animals' %}">Lista Zwierzaków</a>
         </div>
         <div class="features-box col-lg-2 offset-lg-1">
           <i class="icon fas fa-users fa-3x"></i>
@@ -74,7 +74,7 @@
         </div>
         <div class="features-box col-lg-2 offset-lg-1">
           <i class="icon fas fa-paw fa-3x"></i>
-          <a href="/person/new_cat">Dodaj zwierzaka</a>
+          <a href="/person/new_animal">Dodaj zwierzaka</a>
         </div>
           <div class="features-box col-lg-2 offset-lg-1">
           <i class="icon fas fa-photo-video fa-3x"></i>
@@ -85,20 +85,20 @@
 
 <!-- Testimonials -->
 
-    <section id="testimonials">
+    <section id="testimonials" >
         <h2>Społeczność</h2>
       <div id="testimonials-carousel" class="carousel slide" data-ride="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h2>Poznaj naszych użytkowników</h2>
+              <h3>Poznaj naszych użytkowników i ich pupili.</h3>
+              <h3>Dołącz do naszej społeczności!</h3>
+
 
           </div>
              {% for person in people %}
           <div class="carousel-item">
-            <h2 class="testimonial-text">{{person.name}}</h2>
-             <h2>  Mam {{person.age}} lat, a mój kot to <strong>{{person.cat}}</strong> </h2>
-            <img class="testimonial-images" src="images/lady-img.jpg" alt="lady-profile">
-            <em>Beverly, Illinois</em>
+            <h3 class="testimonial-text">{{person.name}}</h3>
+             <h3>  Mam {{person.age}} lata, a mój zwierzak to {{person.animal}}</h3>
           </div>
             {% endfor %}
         </div>
@@ -112,13 +112,11 @@
         </a>
       </div>
 
+        <footer id="footer">
+      <i class="social-icon fa fa-facebook-official" aria-hidden="true"></i>
+      <i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+      <i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+      <i class="social-icon fa fa-envelope" aria-hidden="true"></i>
+      <p>© Copyright 2020</p>
 
-<ul >
-    {% for person in people %}
-        <li >
-            <a  href="{% url 'detail' person.id %}">
-                {{person.name}}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+    </footer>
