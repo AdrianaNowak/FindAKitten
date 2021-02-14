@@ -3,16 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IsItCat?</title>
+    <title>IsItCatorDog?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'website/style.css' %}" >
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Witaj w aplikacji - Znajdź kotka</h1>
-<p>
-    Aplikacja służy do sprawdzenia czy na zdjęciu, które prześlesz znajduje się kotek.
-
-</p>
+<section id="title">
+    <div class="container-fluid">
+    <h1>Witaj w aplikacji - Znajdź kota albo psa na zdjęciu!</h1>
+    <img class="title-image" src="{% static 'website/catdog.png' %}">
+</section>
+</div>
 
 <h2>Społeczność</h2>
 <ul >
@@ -26,16 +27,17 @@
 </ul>
 
 <p>
-<a  style=" margin-right: 150px; margin-left: 180px; " href="{% url 'cats' %}">Lista kotów</a>
+<a  style=" margin: 8px 50px 8px; " href="{% url 'cats' %}">Lista zwierzaków</a>
 
-<a  style=" margin-right: 150px;" href="/person/new_person">Dodaj osobę</a>
+<a  style="  margin: 8px 50px 8px; " href="/person/new_person">Dodaj osobę</a>
+</p>
+<p>
+<a style="  margin: 8px 50px 8px; " href="/person/new_cat">Dodaj kota albo psa</a>
 
-<a style=" margin-right: 150px;" href="/person/new_cat">Dodaj kota</a>
+<a style="  margin: 8px 50px 8px; " href="/image_upload">Sprawdź zdjęcie</a>
 
-<a style=" margin-right: 150px;" href="/image_upload">Sprawdź zdjęcie</a>
 </p>
 
-<img src="{% static 'website/cat.png' %}" width="540px">
 
 </body>
 </html>

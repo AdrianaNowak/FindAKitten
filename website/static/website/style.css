@@ -1,15 +1,16 @@
 body {
-  margin: 0;
   text-align: center;
-  font-family: 'Merriweather', serif;
+  margin: 0;
+  font-family: 'Montserrat', serif;
   color: #40514E;
 }
 
 h1 {
+  text-align: left;
   color: #66BFBF;
-  font-family: 'Sacramento', cursive;
-  font-size: 5.625rem;
-  margin: 50px auto 0 auto;
+  font-family: 'Montserrat',
+  font-size: 50px;
+  margin: 50px 50px 50px;
 }
 
 h2 {
@@ -23,6 +24,7 @@ h2 {
 }
 
 p {
+  text-align: center;
   color: #11999E;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
@@ -40,12 +42,18 @@ li {
   padding-top: 100px;
 }
 
+
 .intro {
   width: 30%;
   text-align: center;
   margin: 50px auto 100px auto;
   line-height: 2
 
+}
+.container-fluid {
+  padding: 3% 10% 7%;
+  font-size: 2rem;
+  text-align: right;
 }
 
 table{
@@ -79,3 +87,15 @@ color: #e5dfdf;
 font-size: 0.75rem;
 padding: 20px 0;
 }
+
+#title {
+  background-color: #f0e5d8;
+  color: #fff;
+  text-align: left;
+
+}
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
