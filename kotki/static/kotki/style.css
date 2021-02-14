@@ -1,8 +1,8 @@
 body {
   margin: 0;
   text-align: center;
-  font-family: 'Merriweather', serif;
-  color: #40514E;
+  font-family: 'Montserrat', serif;
+  color: #307672;
 }
 
 .fixed {
@@ -15,23 +15,21 @@ body {
 }
 
 h1 {
-  text-align:left;
-  color: #66BFBF;
+  text-align: center;
   font-family: 'Montserrat';
   font-size: 50px;
   margin: 50px auto 0 auto;
 }
 
 h2 {
-  color: #66BFBF;
+  color: #144d53;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
   font-size: 2.5rem;
   padding: 10px;
 }
 
 h3 {
-  color: #11999E;
+  color: #144d53;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
 }
@@ -69,10 +67,24 @@ table{
   line-height: 2
 
 }
+form{
+  width: 50%;
+  margin: 100px auto 150px auto;
+  text-align: center;
+  line-height: 2
 
-
+}
+label{
+  width: 50%;
+  line-height: 2;
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #1e212d;
+  }
 .p {
   line-height: 2;
+  text-align: center;
+
 }
 a {
   color: #1d4d4f;
@@ -85,7 +97,34 @@ a:hover {
   color:#e5dfdf;
 }
 
-
-
-
-
+button {
+	box-shadow: 0 10 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Montserrat';
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 15px;
+	text-decoration:none;
+	text-shadow:0 1px 0 #3d768a;
+}
+button:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+input {
+  width: 50%;
+  line-height: 2;
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #1e212d;
+  }
+}
