@@ -1,21 +1,117 @@
 {% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>IsItCatorDog?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+      <!-- Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap" rel="stylesheet">
+
+    <!--CSS Stylesheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link rel="stylesheet" href="{% static 'website/style.css' %}" >
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/998e5edbad.js" crossorigin="anonymous"></script>
+    <!--Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <body>
-<section id="title">
-    <div class="container-fluid">
-    <h1>Witaj w aplikacji - Znajdź kota albo psa na zdjęciu!</h1>
-    <img class="title-image" src="{% static 'website/catdog.png' %}">
-</section>
-</div>
+  <section id="title">
+      <div class="container-fluid">
+        <!-- NAvbar -->
 
-<h2>Społeczność</h2>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" href="">Is it Cat or Dog?</a>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Download</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+            <!-- Title -->
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>Witaj w aplikacji - Znajdź kota albo psa na zdjęciu!</h1>
+
+            <button type="button" class="btn btn-dark btn-lg download-button"> <i class="fab fa-apple"></i> Download</button>
+            <button type="button" class="btn btn-outline-light btn-lg download-button"> <i class="fab fa-google-play"></i> Download</button>
+          </div>
+
+          <div class="col-lg-6">
+            <img class="title-image" src="{% static 'website/catdog.png' %}">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Features -->
+
+    <section id="features">
+      <div class="row">
+        <div class="features-box col-lg-2 ">
+          <i class="icon fas fa-list fa-3x"></i>
+          <a href="{% url 'cats' %}">Lista Zwierzaków</a>
+        </div>
+        <div class="features-box col-lg-2 offset-lg-1">
+          <i class="icon fas fa-users fa-3x"></i>
+          <a href="/person/new_person">Dodaj osobę</a>
+        </div>
+        <div class="features-box col-lg-2 offset-lg-1">
+          <i class="icon fas fa-paw fa-3x"></i>
+          <a href="/person/new_cat">Dodaj zwierzaka</a>
+        </div>
+          <div class="features-box col-lg-2 offset-lg-1">
+          <i class="icon fas fa-photo-video fa-3x"></i>
+          <a href="/image_upload">Sprawdź zdjęcie</a>
+        </div>
+      </div>
+    </section>
+
+<!-- Testimonials -->
+
+    <section id="testimonials">
+        <h2>Społeczność</h2>
+      <div id="testimonials-carousel" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2>Nareszcie mogę unikać zdjęć z kotami i oglądać tylko moich prawdziwych kolegów</h2>
+            <img class="testimonial-images" src="{% static 'website/dog-img.jpg' %}">
+            <em>Rufus, Radom</em>
+          </div>
+          <div class="carousel-item">
+            <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
+            <img class="testimonial-images" src="images/lady-img.jpg" alt="lady-profile">
+            <em>Beverly, Illinois</em>
+          </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#testimonials-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+        </a>
+        <a class="carousel-control-next" href="#testimonials-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+        </a>
+      </div>
+
+
 <ul >
     {% for person in people %}
         <li >
@@ -25,19 +121,3 @@
         </li>
     {% endfor %}
 </ul>
-
-<p>
-<a  style=" margin: 8px 50px 8px; " href="{% url 'cats' %}">Lista zwierzaków</a>
-
-<a  style="  margin: 8px 50px 8px; " href="/person/new_person">Dodaj osobę</a>
-</p>
-<p>
-<a style="  margin: 8px 50px 8px; " href="/person/new_cat">Dodaj kota albo psa</a>
-
-<a style="  margin: 8px 50px 8px; " href="/image_upload">Sprawdź zdjęcie</a>
-
-</p>
-
-
-</body>
-</html>
