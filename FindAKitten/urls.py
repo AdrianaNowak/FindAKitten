@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from website.views import welcome, date, jakistrzeciprzyklad
-from kotki.views import *
+from kotki.views import animals_list, new_animal, new_person ,new_image_view , detail , theanswerPies, display_animal_images, theanswerKot
 
 
 urlpatterns = [
@@ -31,7 +31,10 @@ urlpatterns = [
     path('person/new_person', new_person, name="new_person"),
     path('person/new_animal', new_animal, name="new_animal"),
     path('image_upload', new_image_view, name='image_upload'),
-    path('success', success, name='success'),
+    path('theanswerPies/<animal>/', theanswerPies, name='theanswerPies'),
+    path('theanswerKot/<animal>/', theanswerKot, name='theanswerKot'),
+    path('display_animal_images', display_animal_images, name='display_animal_images')
+
 ]
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,

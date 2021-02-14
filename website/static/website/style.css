@@ -37,7 +37,6 @@ p {
   color: #8f8f8f;
 }
 
-
 #title {
   background-color: #008891;
   color: #e7e7de;
@@ -80,7 +79,7 @@ p {
 
 /*title images*/
 .title-image {
-  width: 60%;
+  width: 55%;
   transform: rotate(25deg);
   position: absolute;
   right: 30%;

@@ -3,7 +3,7 @@ from django.forms import modelform_factory
 from django.http import HttpResponse
 from .forms import *
 
-from .models import Person, Animal
+from .models import Person, Animal, Image
 
 
 def detail(request, id):
@@ -44,14 +44,30 @@ def new_animal(request):
 def new_image_view(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
-
+        name = request.POST.get('name')
         if form.is_valid():
             form.save()
-            return redirect('success')
+            # odpowiedz = ML.RobieRzeczyIZwracamString
+            odpowiedz = "Cat"
+            if odpowiedz == "Dog":
+                return redirect('theanswerPies', animal=name)
+            if odpowiedz == "Cat":
+                return redirect('theanswerKot', animal=name)
     else:
         form = ImageForm()
     return render(request, 'kotki/images.html', {'form': form})
 
-def success(request):
-    return HttpResponse('successfully uploaded')
 
+def theanswerPies(request, animal):
+    imageName = Image.objects.get(name=animal)
+    return render(request, 'kotki/theanswerPies.html', {'animal': imageName})
+
+
+def theanswerKot(request, animal):
+    imageName = Image.objects.get(name=animal)
+    return render(request, 'kotki/theanswerKot.html', {'animal': imageName})
+
+
+def display_animal_images(request):
+    images = Image.objects.all()
+    return render(request, 'kotki/display_animal_images.html', {'animalImages': images})
