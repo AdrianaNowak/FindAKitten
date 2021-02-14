@@ -7,7 +7,7 @@ class Cat(models.Model):
     date_of_birth = models.DateField()
 
     def __str__(self):
-        return f"Kot {self.name}, kolor sierści: {self.color}, urodzony:{self.date_of_birth}"
+        return f"{self.name}, kolor sierści: {self.color}, urodzony:{self.date_of_birth}"
 
 
 class Person(models.Model):

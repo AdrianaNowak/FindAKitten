@@ -90,16 +90,17 @@
       <div id="testimonials-carousel" class="carousel slide" data-ride="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h2>Nareszcie mogę unikać zdjęć z kotami i oglądać tylko moich prawdziwych kolegów</h2>
-            <img class="testimonial-images" src="{% static 'website/dog-img.jpg' %}">
-            <em>Rufus, Radom</em>
+            <h2>Poznaj naszych użytkowników</h2>
+
           </div>
+             {% for person in people %}
           <div class="carousel-item">
-            <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
+            <h2 class="testimonial-text">{{person.name}}</h2>
+             <h2>  Mam {{person.age}} lat, a mój kot to <strong>{{person.cat}}</strong> </h2>
             <img class="testimonial-images" src="images/lady-img.jpg" alt="lady-profile">
             <em>Beverly, Illinois</em>
           </div>
-
+            {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#testimonials-carousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
